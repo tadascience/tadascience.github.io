@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the tada<span style='color:pink;'>⬢</span>verse"
-description: "The tada<span style='color:pink;'>⬢</span>verse is a collection of 1 opinionated package for tada<span style='color:pink;'>⬢</span>science. Deleloped by the tada<span style='color:pink;'>⬢</span>science team of 😷 1, the tada<span style='color:pink;'>⬢</span>verse is built to flip and spin data 📊 into tada 🎉."
+description: "The tada<span style='color:pink;'>⬢</span>verse is a collection of 1 opinionated package for tada<span style='color:pink;'>⬢</span>science. Developed by the tada<span style='color:pink;'>⬢</span>science team of 😷 1, the tada<span style='color:pink;'>⬢</span>verse is built to flip and spin data 📊 into tada 🎉."
 author:
   - name: Romain François
     orcid: 0000-0002-2444-4226
@@ -18,7 +18,7 @@ This is the first article for the tada[⬢]{style="color:pink; font-size: 120%"}
 
 When I [linkedined](https://www.linkedin.com/posts/romain-francois_im-happy-to-share-so-lets-do-some-activity-7142468020257386496-ZjC_) about the *You & R* upcoming podcast 🎙️ back in December, I shared some code on [the survey](https://bit.ly/you-and-R) with potential guests.
 
-![](survey.png)
+![](survey.png){fig-align="center"}
 
 ... but as I'm getting ready to launch 🚀 soon - more on that shortly 🕥 🕥 🕗 🕔 - I wanted something a bit more fun, so I wrote the `pkg_roulette()` function this morning and giftwrapped 🎁 it up as the [tada](https://tada.tada.science) package that is on its way to CRAN. Over time, [tada](https://tada.tada.science) will get more tools and will serve as a host for all things tada[⬢]{style="color:pink; font-size: 120%"}science.
 
