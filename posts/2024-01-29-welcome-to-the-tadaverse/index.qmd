@@ -1,0 +1,41 @@
+---
+title: "Welcome to the tada⬡verse"
+description: "The tada⬡verse is a collection of 1 opinionated package for tada⬡science. Deleloped by the tada⬡science team of 😷 1, the tada⬡verse is built to flip and spin data 📊 into tada 🎉."
+author:
+  - name: Romain François
+    orcid: 0000-0002-2444-4226
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-01-29
+categories: [tada, package, R]
+citation: 
+  url: https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse
+image: mini.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+This is the first article for the tada⬢science blog, so before we deep dive into changing the world, let's have some fun 🛝.
+
+When I [linkedined](https://www.linkedin.com/posts/romain-francois_im-happy-to-share-so-lets-do-some-activity-7142468020257386496-ZjC_) about the *You & R* upcoming podcast 🎙️ back in December, I shared some code on [the survey](https://bit.ly/you-and-R) with potential guests.
+
+![](survey.png)
+
+... but as I'm getting ready to launch 🚀 soon - more on that shortly 🕥 🕥 🕗 🕔  - I wanted something a bit more fun, so I wrote the `pkg_roulette()` function this morning and giftwrapped 🎁 it up as the [tada](https://tada.tada.science) package that is on its way to CRAN. Over time, [tada](https://tada.tada.science) will get more tools and will serve as a host for all things tada⬡science.
+
+```{r}
+library(tada)
+```
+
+The [pkg_roulette()](http://tada.tada.science/reference/pkg_roulette.html) gives you the `time=` and `n=` arguments to control how long the roulette runs and how many packages it shows. It goes increasingly slowly during that time. You can also control the colors it uses with the `cols=` argument. But you don't need to, the defaults are fine.
+
+![](roulette.gif)
+
+[tada](https://tada.tada.science) is on its way to CRAN, but you don't need to wait, and you can start using it right now with:
+
+```{r, eval=FALSE}
+pak::pak("tadascience/tada")
+```
+
+💡 You have ideas to improve it, awesome 👍 let's chat about it on [github](https://github.com/tadascience/tada), on [linkedin](https://www.linkedin.com/posts/romain-francois_welcome-to-the-tadaverse-i-played-activity-7157690935936499713-gxoA), on [X](https://x.com/romain_francois/status/1751951394439913520?s=20), on [bluesky](https://bsky.app/profile/romainfrancois.bsky.social/post/3kk4ov2vgs52v), on [mastodon](https://mastodon.social/@romainfrancois/111839335940660715), on [threads](https://www.threads.net/@romain_francois) or however you usually get in touch.
+
+🦘 don't go too far, I'll be back in this blog.
