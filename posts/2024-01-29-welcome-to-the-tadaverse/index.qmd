@@ -3,7 +3,6 @@ title: "Welcome to the tada<span style='color:pink;'>⬢</span>verse"
 description: "The tada<span style='color:pink;'>⬢</span>verse is a collection of 1 opinionated package for tada<span style='color:pink;'>⬢</span>science. Developed by the tada<span style='color:pink;'>⬢</span>science team of 😷 1, the tada<span style='color:pink;'>⬢</span>verse is built to flip and spin data 📊 into tada 🎉."
 author:
   - name: Romain François
-    orcid: 0000-0002-2444-4226
     affiliation: tada⬢science
     affiliation-url: https://tada.science
 date: 2024-01-29
