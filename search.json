@@ -1,17 +1,17 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
     "objectID": "posts/2024-01-29-welcome-to-the-tadaverse/index.html",
     "href": "posts/2024-01-29-welcome-to-the-tadaverse/index.html",
     "title": "Welcome to the tada⬢verse",
     "section": "",
-    "text": "This is the first article for the tada⬢science blog, so before we deep dive into changing the world, let’s have some fun 🛝.\nWhen I linkedined about the You & R upcoming podcast 🎙️ back in December, I shared some code on the survey with potential guests.\n\n\n\n\n\n… but as I’m getting ready to launch 🚀 soon - more on that shortly 🕥 🕥 🕗 🕔 - I wanted something a bit more fun, so I wrote the pkg_roulette() function this morning and giftwrapped 🎁 it up as the tada package that is on its way to CRAN. Over time, tada will get more tools and will serve as a host for all things tada⬢science.\n\nlibrary(tada)\n\n\n  🎉🎉                                  🎉🎉\n  🎉🎉                                  🎉🎉\n🎉🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉       🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉\n  🎉🎉                  🎉🎉    🎉🎉   🎉🎉             🎉🎉\n  🎉🎉          🎉🎉🎉🎉🎉🎉   🎉🎉     🎉🎉   🎉🎉🎉🎉🎉🎉🎉\n  🎉🎉  🎉      🎉🎉     🎉🎉  🎉🎉     🎉🎉   🎉🎉      🎉🎉\n   🎉🎉🎉🎉      🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉🎉    🎉🎉🎉🎉🎉🎉\n\n\nThe pkg_roulette() gives you the time= and n= arguments to control how long the roulette runs and how many packages it shows. It goes increasingly slowly during that time. You can also control the colors it uses with the cols= argument. But you don’t need to, the defaults are fine.\n\ntada is on its way to CRAN, but you don’t need to wait, and you can start using it right now with:\n\npak::pak(\"tadascience/tada\")\n\n💡 You have ideas to improve it, awesome 👍 let’s chat about it on github, on linkedin, on X, on bluesky, on mastodon, on threads or however you usually get in touch.\n🦘 don’t go too far, I’ll be back in this blog.\n\n\n\nCitationBibTeX citation:@online{françois2024,\n  author = {François, Romain},\n  title = {Welcome to the Tada\\textless span\n    Style=“color:pink;”\\textgreater⬢\\textless/Span\\textgreater verse},\n  date = {2024-01-29},\n  url = {https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFrançois, Romain. 2024. “Welcome to the Tada&lt;span\nStyle=‘color:pink;’&gt;⬢&lt;/Span&gt;verse.” January\n29, 2024. https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Welcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
+    "text": "This is the first article for the tada⬢science blog, so before we deep dive into changing the world, let’s have some fun 🛝.\nWhen I linkedined about the You & R upcoming podcast 🎙️ back in December, I shared some code on the survey with potential guests.\n\n\n\n\n\n… but as I’m getting ready to launch 🚀 soon - more on that shortly 🕥 🕥 🕗 🕔 - I wanted something a bit more fun, so I wrote the pkg_roulette() function this morning and giftwrapped 🎁 it up as the tada package that is on its way to CRAN. Over time, tada will get more tools and will serve as a host for all things tada⬢science.\n\nlibrary(tada)\n\n\n  🎉🎉                               🎉🎉\n  🎉🎉                               🎉🎉\n🎉🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉       🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉\n  🎉🎉                🎉🎉     🎉🎉   🎉🎉            🎉🎉\n  🎉🎉          🎉🎉🎉🎉🎉🎉   🎉🎉     🎉🎉   🎉🎉🎉🎉🎉🎉🎉\n  🎉🎉  🎉      🎉🎉     🎉🎉  🎉🎉     🎉🎉   🎉🎉      🎉🎉\n   🎉🎉🎉🎉      🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉🎉\n\n\nThe pkg_roulette() gives you the time= and n= arguments to control how long the roulette runs and how many packages it shows. It goes increasingly slowly during that time. You can also control the colors it uses with the cols= argument. But you don’t need to, the defaults are fine.\n\ntada is on its way to CRAN, but you don’t need to wait, and you can start using it right now with:\n\npak::pak(\"tadascience/tada\")\n\n💡 You have ideas to improve it, awesome 👍 let’s chat about it on github, on linkedin, on X, on bluesky, on mastodon, on threads or however you usually get in touch.\n🦘 don’t go too far, I’ll be back in this blog.\n\n\n\nCitationBibTeX citation:@online{françois2024,\n  author = {François, Romain},\n  title = {Welcome to the Tada\\textless span\n    Style=“color:pink;”\\textgreater⬢\\textless/Span\\textgreater verse},\n  date = {2024-01-29},\n  url = {https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFrançois, Romain. 2024. “Welcome to the Tada&lt;span\nStyle=‘color:pink;’&gt;⬢&lt;/Span&gt;verse.” January\n29, 2024. https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse."
   },
   {
     "objectID": "index.html",
@@ -21,10 +21,66 @@
     "text": "🎉"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "January 2024\n\n\n\n\n\n\nwrapup\n\n\n\n📆 wrapping up january 2024 at tada⬢science, this was a busy month 🎉\n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html",
+    "href": "posts/2024-01-31-january-2024/index.html",
+    "title": "January 2024",
+    "section": "",
+    "text": "It’s already time to sunset 🌅 january, so let’s obey the tradition of rounding up what happened on the previous month. Ok this is mostly a motivational tradition at this point, as it has happened exactly zero times in the past, but you gotta start somewhere right ?!"
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#xeus-r",
+    "href": "posts/2024-01-31-january-2024/index.html#xeus-r",
+    "title": "January 2024",
+    "section": "xeus-r",
+    "text": "xeus-r\nThis has been in the |&gt; line for a while, but we finally were able to announce the initial version of xeus-r and write 📝 about it the Jupyter blog. xeus-r is a Jupyter kernel for R that is, as the name implies, based on the strong foundations of Xeus. Working on bootstrapping this project with the QuantStack team has been a privilege. Our vision is that it is going to open many doors for the intersection of Jupyter and R users. There is still a lot to do, let’s go 🚀."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#tadascience",
+    "href": "posts/2024-01-31-january-2024/index.html#tadascience",
+    "title": "January 2024",
+    "section": "tada⬢science",
+    "text": "tada⬢science\nI bought the tada⬢science domain a while back, but did not do much with it apart from leaving some breadcrumbs 🍞 here and there, but I’ve now bit the bullet 🚄 and dived in to quarto to start structuring the site and this blog. It’s early days at the time of writing this wrapup, i.e. the landing page mostly contain a 🎉 emoji, but what else do you need really, that’s the best emoji.\nI’ve asked ChatGPT what a tada scientist is, and this is one of this cases where the 🤖 was a bit unimaginative and gave me the typo treatment:\n\nIt seems like there might be a typo in your question. Did you mean to ask about a “data scientist”? A data scientist is a professional who uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. They often apply their skills in statistics, data analysis, and machine learning to analyze data and generate actionable insights. If this is not what you meant, could you please clarify your question?\n\n… I would have prefered an hallucination 💭 in that instance, so I guess we are going to have to invent what is a tada⬢science, I’ll expand on that over time, but we can start with a new spin on the practice of data science. Let’s go from tidy data to tada duty 🤝."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#tada",
+    "href": "posts/2024-01-31-january-2024/index.html#tada",
+    "title": "January 2024",
+    "section": "tada 🎉",
+    "text": "tada 🎉\nThe tada 📦 was born and is currently in the release process 🏓 with CRAN. It currently only ships the pkg_roulette() function for a fun and engaging way to discover new R packages. You can find our more (not really) about it in this blog post but if you’re in a rush, here it is again.\n\n\n\n\n\nThis was received with a bit of curiosity and enthusiasm and a drop of “is that it?” from the community when I posted about it on linkedin and various other socials. I can relate to both the enthusiasm and the frustration, it’s a 🐣 package at this point. It will serve as a host for various tools to support the practice of tada⬢science."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#you-r",
+    "href": "posts/2024-01-31-january-2024/index.html#you-r",
+    "title": "January 2024",
+    "section": "You & R",
+    "text": "You & R\nOne of my commitments for 2024 is the You & R podcast, which I hinted at in this linkedin post. I received many applications through the survey I shared with the post, and I can’t wait to get started and have these conversations. You & R is meant to be people centered safe place where we exchange stories about how we relate to R. I’ll invite people across() 😉 the spectrum of trajectories. No matter where you ® in your journey with our favorite data science tool, your story matters, and we’re all in this together. I want to hear and amplify stories about new R users who give us the privilege to hop on board this ⛵️ with us, as well as more experience R users.\nI’m currently in the process of gearing up 🎙️🎧 🎥 and learning about things 🛠️ like riverside, so please bear with my while I upskill and stay tuned 🎶 for more You & R news."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#bandwidth",
+    "href": "posts/2024-01-31-january-2024/index.html#bandwidth",
+    "title": "January 2024",
+    "section": "Bandwidth 🧘‍♂️",
+    "text": "Bandwidth 🧘‍♂️\nThere is currently some available bandwidth here, so if you need a tada⬢scientist to help you with an R thing, please reach out, linkedin is probably your safest bet right now, but I’m also in other socials 🦅 🦋 🐘 🧶. I’m confident you’ll find me."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#never-search-alone",
+    "href": "posts/2024-01-31-january-2024/index.html#never-search-alone",
+    "title": "January 2024",
+    "section": "Never Search Alone",
+    "text": "Never Search Alone\nI’ve enrolled in a Job Search Council following the approach described in the Never Search Alone book 📖. Although, I would not say I’m actually job hunting per se, the approach and the group I’ve joined 💜 is flexible enough to accommodate the particularities of the tada⬢science journey. Finding about about Never Search Alone has been a pivotal moment in my transition from my previous work life. As much as fast reading the book front to cover in two days was exciting, actually doing the work with a JSC is another level, I would recommend it to anyone going through a work cross roads moment.\nLet’s see how it goes, but I’ll probably write about how I’m adapting the NSA approach to my specifics."
+  },
+  {
+    "objectID": "posts/2024-01-31-january-2024/index.html#reading",
+    "href": "posts/2024-01-31-january-2024/index.html#reading",
+    "title": "January 2024",
+    "section": "Reading",
+    "text": "Reading\nI’m committed to step up my reading habits, because there are a lot more things I want to apply my curiosity too. Last month I read Learning To Scale with my reading partner. Thanks again Diane 👸 for the recommendation, and the book. Learning to Lead, Leading to Learn is next on my list on the same theme.\n\n\n\n\n\nAlso finished Unbroken: the Trauma response is never wrong on a totally different topic. The trauma tapes is one of my favourite podcasts and the book goes further.\nWhat Now, with Trevor Noah is an another one of my favourite podcasts, and the episode featuring Kerry Washington is what converted me to sign up to Audible. This is a fascinating story. Next on my Audible queue is Viola Davis’s Finding Me.\nOn the more technical front, I’ll go through C++20: the complete guide because there seems to be a lot of interesting new things happening in C++ 🤓🚀."
   }
 ]

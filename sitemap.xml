@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse/index.html</loc>
-    <lastmod>2024-01-29T18:04:17.650Z</lastmod>
+    <loc>https://tada.science/about.html</loc>
+    <lastmod>2024-02-01T11:15:01.279Z</lastmod>
   </url>
   <url>
-    <loc>https://tada.science/posts.html</loc>
-    <lastmod>2024-01-29T18:04:17.650Z</lastmod>
+    <loc>https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse/index.html</loc>
+    <lastmod>2024-02-01T11:15:01.279Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/index.html</loc>
-    <lastmod>2024-01-29T18:04:17.650Z</lastmod>
+    <lastmod>2024-02-01T11:15:01.279Z</lastmod>
   </url>
   <url>
-    <loc>https://tada.science/about.html</loc>
-    <lastmod>2024-01-29T18:04:17.650Z</lastmod>
+    <loc>https://tada.science/posts.html</loc>
+    <lastmod>2024-02-01T11:15:01.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/posts/2024-01-31-january-2024/index.html</loc>
+    <lastmod>2024-02-01T11:15:01.283Z</lastmod>
   </url>
 </urlset>
