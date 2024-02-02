@@ -14,6 +14,13 @@
     "text": "This is the first article for the tada⬢science blog, so before we deep dive into changing the world, let’s have some fun 🛝.\nWhen I linkedined about the You & R upcoming podcast 🎙️ back in December, I shared some code on the survey with potential guests.\n\n\n\n\n\n… but as I’m getting ready to launch 🚀 soon - more on that shortly 🕥 🕥 🕗 🕔 - I wanted something a bit more fun, so I wrote the pkg_roulette() function this morning and giftwrapped 🎁 it up as the tada package that is on its way to CRAN. Over time, tada will get more tools and will serve as a host for all things tada⬢science.\n\nlibrary(tada)\n\n\n  🎉🎉                               🎉🎉\n  🎉🎉                               🎉🎉\n🎉🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉       🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉\n  🎉🎉                🎉🎉     🎉🎉   🎉🎉            🎉🎉\n  🎉🎉          🎉🎉🎉🎉🎉🎉   🎉🎉     🎉🎉   🎉🎉🎉🎉🎉🎉🎉\n  🎉🎉  🎉      🎉🎉     🎉🎉  🎉🎉     🎉🎉   🎉🎉      🎉🎉\n   🎉🎉🎉🎉      🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉🎉     🎉🎉🎉🎉🎉🎉\n\n\nThe pkg_roulette() gives you the time= and n= arguments to control how long the roulette runs and how many packages it shows. It goes increasingly slowly during that time. You can also control the colors it uses with the cols= argument. But you don’t need to, the defaults are fine.\n\ntada is on its way to CRAN, but you don’t need to wait, and you can start using it right now with:\n\npak::pak(\"tadascience/tada\")\n\n💡 You have ideas to improve it, awesome 👍 let’s chat about it on github, on linkedin, on X, on bluesky, on mastodon, on threads or however you usually get in touch.\n🦘 don’t go too far, I’ll be back in this blog.\n\n\n\nCitationBibTeX citation:@online{françois2024,\n  author = {François, Romain},\n  title = {Welcome to the Tada\\textless span\n    Style=“color:pink;”\\textgreater⬢\\textless/Span\\textgreater verse},\n  date = {2024-01-29},\n  url = {https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFrançois, Romain. 2024. “Welcome to the Tada&lt;span\nStyle=‘color:pink;’&gt;⬢&lt;/Span&gt;verse.” January\n29, 2024. https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse."
   },
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "tada::verse() poetry\n\n\n\n\n\n\nR\n\n\nai\n\n\npoetry\n\n\ndev\n\n\n\nThe tada::verse() function writes poetry about your R package. \n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 2024\n\n\n\n\n\n\nwrapup\n\n\n\n📆 wrapping up january 2024 at tada⬢science, this was a busy month 🎉\n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "tada<span style='color:pink; font-size: 120%'>⬢</span>science",
@@ -21,11 +28,11 @@
     "text": "🎉"
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
+    "objectID": "posts/2024-02-02-tada-verse-poems/index.html",
+    "href": "posts/2024-02-02-tada-verse-poems/index.html",
+    "title": "tada::verse() poetry",
     "section": "",
-    "text": "January 2024\n\n\n\n\n\n\nwrapup\n\n\n\n📆 wrapping up january 2024 at tada⬢science, this was a busy month 🎉\n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
+    "text": "I just received the Thanks, on its way to CRAN email 📧 about the tada package 🎉, so it’s a good time for a celebration, and what better way to celebrate than with a dash of poetry.\nThe @dev version gains a verse() function to write poetry about R packages, thanks for the heavy lifting of the mlverse/chattr 📦. We try to maintain a @main branch that could be released at any time, and chattr is not yet released. We hope it will be for the spring 🌤️ release of tada, but it will be for the meantime available in the @dev branch.\n\n\n\n\n\n── chattr \n\n\n• Provider: Open AI - Chat Completions\n\n\n• Path/URL: https://api.openai.com/v1/chat/completions\n\n\n• Model: gpt-3.5-turbo\n\n\nSo let’s dive right in and do some ggplot2 poetry 🪶\n\n\n\n\n\nFor additional fun, we can write some poetry about a random package we discover with tada::pkg_roulette()\n\ntada::pkg_roulette() |&gt; tada::verse()\n\n\n\n\n\nCitationBibTeX citation:@online{françois2024,\n  author = {François, Romain},\n  title = {Tada::verse() Poetry},\n  date = {2024-01-31},\n  url = {https://tada.science/posts/2024-02-02-tada-verse-poetry},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFrançois, Romain. 2024. “Tada::verse() Poetry.” January 31,\n2024. https://tada.science/posts/2024-02-02-tada-verse-poetry."
   },
   {
     "objectID": "posts/2024-01-31-january-2024/index.html",
