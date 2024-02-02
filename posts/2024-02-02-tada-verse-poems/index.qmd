@@ -1,0 +1,34 @@
+---
+title: "tada::verse() poetry"
+description: "The tada::verse() function writes poetry about your R package. "
+author:
+  - name: Romain François
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-01-31
+categories: [R, ai, poetry, dev]
+image: image.png
+citation: 
+  url: https://tada.science/posts/2024-02-02-tada-verse-poetry
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+I just received the *Thanks, on its way to CRAN* email 📧 about the [tada](tada.tada.science) package 🎉, so it's a good time for a celebration, and what better way to celebrate than with a dash of poetry.
+
+The `@dev` version gains a `verse()` function to write poetry about R packages, thanks for the heavy lifting of the [mlverse/chattr](https://mlverse.github.io/chattr/) 📦. We try to maintain a `@main` branch that could be released at any time, and `chattr` is not yet released. We hope it will be for the spring 🌤️ release of [tada](tada.tada.science), but it will be for the meantime available in the `@dev` branch.
+
+```{r echo=FALSE}
+chattr::chattr_use("gpt35")
+```
+
+So let's dive right in and do some [ggplot2](https://ggplot2.tidyverse.org) poetry 🪶
+
+![](ggplot2.png){fig-align="center" width="692"}
+
+For additional fun, we can write some poetry about a random package we discover with [tada::pkg_roulette()](https://tada.tada.science/reference/pkg_roulette.html)
+
+```{r eval=FALSE}
+tada::pkg_roulette() |> tada::verse()
+```
+
+{{< video poetry.mov >}}

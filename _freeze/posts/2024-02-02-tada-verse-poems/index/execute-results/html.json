@@ -1,0 +1,15 @@
+{
+  "hash": "90b99160627394da853ca7cacecfc1b2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"tada::verse() poetry\"\ndescription: \"The tada::verse() function writes poetry about your R package. \"\nauthor:\n  - name: Romain François\n    affiliation: tada⬢science\n    affiliation-url: https://tada.science\ndate: 2024-01-31\ncategories: [R, ai, poetry, dev]\nimage: image.png\ncitation: \n  url: https://tada.science/posts/2024-02-02-tada-verse-poetry\ndraft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!\n---\n\n\nI just received the *Thanks, on its way to CRAN* email 📧 about the [tada](tada.tada.science) package 🎉, so it's a good time for a celebration, and what better way to celebrate than with a dash of poetry.\n\nThe `@dev` version gains a `verse()` function to write poetry about R packages, thanks for the heavy lifting of the [mlverse/chattr](https://mlverse.github.io/chattr/) 📦. We try to maintain a `@main` branch that could be released at any time, and `chattr` is not yet released. We hope it will be for the spring 🌤️ release of [tada](tada.tada.science), but it will be for the meantime available in the `@dev` branch.\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n\n```\n\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n── chattr \n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n• Provider: Open AI - Chat Completions\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n• Path/URL: https://api.openai.com/v1/chat/completions\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n• Model: gpt-3.5-turbo\n```\n\n\n:::\n:::\n\n\nSo let's dive right in and do some [ggplot2](https://ggplot2.tidyverse.org) poetry 🪶\n\n![](ggplot2.png){fig-align=\"center\" width=\"692\"}\n\nFor additional fun, we can write some poetry about a random package we discover with [tada::pkg_roulette()](https://tada.tada.science/reference/pkg_roulette.html)\n\n\n::: {.cell}\n\n```{.r .cell-code}\ntada::pkg_roulette() |> tada::verse()\n```\n:::\n\n{{< video poetry.mov >}}\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
