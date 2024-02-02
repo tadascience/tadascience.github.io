@@ -1,6 +1,6 @@
 ---
 title: "tada::verse() poetry"
-description: "The tada::verse() function writes poetry 🗞️ about your R package. "
+description: "The tada::verse() function writes poetry️ 🦋 about your R package 📦. "
 author:
   - name: Romain François
     affiliation: tada⬢science
