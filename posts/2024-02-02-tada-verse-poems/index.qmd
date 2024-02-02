@@ -1,12 +1,12 @@
 ---
 title: "tada::verse() poetry"
-description: "The tada::verse() function writes poetry about your R package. "
+description: "The tada::verse() function writes poetry 🗞️ about your R package. "
 author:
   - name: Romain François
     affiliation: tada⬢science
     affiliation-url: https://tada.science
-date: 2024-01-31
-categories: [R, ai, poetry, dev]
+date: 2024-02-02
+categories: [R, ai, poetry, tada]
 image: image.png
 citation: 
   url: https://tada.science/posts/2024-02-02-tada-verse-poetry
