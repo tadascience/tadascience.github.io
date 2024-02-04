@@ -1,6 +1,6 @@
 ---
 title: "snitch"
-description: "The experimental snitch 📦 spies on functions and packages"
+description: "The experimental snitch 📦 spies on functions and packages. The name and logo are inspired from the Harry Potter world. "
 author:
   - name: Romain François
     affiliation: tada⬢science
