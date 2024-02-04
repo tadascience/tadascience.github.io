@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Romain François">
+<meta name="dcterms.date" content="2024-02-02">
+<meta name="description" content="The experimental snitch 📦 spies on functions and packages">
 
-<title>tada⬢science - Blog</title>
+<title>tada⬢science - snitch</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +103,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">tada<span style="color:pink; font-size: 120%">⬢</span>science</span>
     </a>
   </div>
@@ -149,11 +126,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -164,195 +141,230 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">snitch</h1>
+                  <div>
+        <div class="description">
+          The experimental snitch 📦 spies on functions and packages
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">snitch</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Romain François </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://tada.science">
+              tada⬢science
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 2, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ai">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="package">package <span class="quarto-category-count">(1)</span></div><div class="category" data-category="poetry">poetry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="snitch">snitch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tada">tada <span class="quarto-category-count">(2)</span></div><div class="category" data-category="wrapup">wrapup <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><a href="https://snitch.tada.science"><img src="logo.png" align="left" height="138"></a></p>
+<p>The snitch 📦 is one of those weekend experiments. In this particular case, it comes from <em>I don’t know how to use base::trace() and I want a thing that tells me how a particular function is called,</em> so I want to spy on a function.</p>
+<p>The name and logo of the package might be because I’ve started to read the first Harry Potter book to my 6 years old daughter 🧙.</p>
+<p>DALL-E gave a decent logo once I removed explicit HP references 🤷‍♂️, i.e.&nbsp;<em>“a small gold colored spherical object with wings”</em> instead of <em>“the golden snitch”:</em></p>
+<blockquote class="blockquote">
+<p>Can you make an hexagon logo for an R package called snitch, inspired by a small gold colored spherical object with wings. The package goal is to spy on function calls.</p>
+</blockquote>
+<p>Anyway 🤖, let’s dive in, you can install it with <code>pak::pak("tadascience/snitch")</code> I’m not sure at this point this will make its way to CRAN.</p>
+<p>The package has <code>snitch::fun()</code> to spy on a function … <em>(I don’t know how to get the colors in quarto so let’s go with a screenshot)</em>. You first get a <a href="https://cli.r-lib.org/reference/cli_rule.html">rule</a> with breadcrumbs of functions that are spyed on, and then their arguments, courtesy of <code>ls.str()</code> :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fun.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>… and <code>snitch::pkg()</code> to spy on functions from a package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(dplyr))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>snitch<span class="sc">::</span><span class="fu">pkg</span>(<span class="st">"dplyr"</span>, <span class="at">pattern =</span> <span class="st">"^summarise_"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(disp), <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>── summarise_cols ──────────────────────────────────────────────────────────────
+   by : List of 3
+    $ type : chr "ungrouped"
+    $ names: chr(0) 
+    $ data : tibble [1 × 1] (S3: tbl_df/tbl/data.frame)
+   data : 'data.frame': 32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   dots : List of 2
+    $ mean: language ~mean(disp)
+    $ n   : language ~n()
+   error_call : &lt;environment: 0x107b31a98&gt; 
+   verb :  chr "summarise"
+── summarise_cols ⬢ FUN ────────────────────────────────────────────────────────
+   mask : Classes 'DataMask', 'R6' &lt;DataMask&gt;
+     Public:
+       add_one: function (name, chunks, result) 
+       clone: function (deep = FALSE) 
+       current_cols: function (vars) 
+       current_key: function () 
+       current_non_group_vars: function () 
+       current_rows: function () 
+       current_vars: function () 
+       eval_all: function (quo) 
+       eval_all_filter: function (quos, env_filter) 
+       eval_all_mutate: function (quo) 
+       eval_all_summarise: function (quo) 
+       forget: function () 
+       get_current_data: function (groups = TRUE) 
+       get_current_group_id: function () 
+       get_current_group_id_mutable: function () 
+       get_current_group_size: function () 
+       get_current_group_size_mutable: function () 
+       get_keys: function () 
+       get_rlang_mask: function () 
+       get_rows: function () 
+       get_size: function () 
+       get_used: function () 
+       initialize: function (data, by, verb, error_call) 
+       is_grouped: function () 
+       is_rowwise: function () 
+       pick_current: function (vars) 
+       remove: function (name) 
+       resolve: function (name) 
+       set_current_group: function (group) 
+       unused_vars: function () 
+     Private:
+       by_names: 
+       chops: environment
+       current_data: list
+       env_current_group_info: environment
+       env_mask_bindings: environment
+       grouped: FALSE
+       keys: tbl_df, tbl, data.frame
+       rows: vctrs_list_of, vctrs_vctr, list
+       rowwise: FALSE
+       size: 32
+       verb: summarise 
+   quo :  language ~mean(disp)
+── summarise_cols ⬢ FUN ────────────────────────────────────────────────────────
+   mask : Classes 'DataMask', 'R6' &lt;DataMask&gt;
+     Public:
+       add_one: function (name, chunks, result) 
+       clone: function (deep = FALSE) 
+       current_cols: function (vars) 
+       current_key: function () 
+       current_non_group_vars: function () 
+       current_rows: function () 
+       current_vars: function () 
+       eval_all: function (quo) 
+       eval_all_filter: function (quos, env_filter) 
+       eval_all_mutate: function (quo) 
+       eval_all_summarise: function (quo) 
+       forget: function () 
+       get_current_data: function (groups = TRUE) 
+       get_current_group_id: function () 
+       get_current_group_id_mutable: function () 
+       get_current_group_size: function () 
+       get_current_group_size_mutable: function () 
+       get_keys: function () 
+       get_rlang_mask: function () 
+       get_rows: function () 
+       get_size: function () 
+       get_used: function () 
+       initialize: function (data, by, verb, error_call) 
+       is_grouped: function () 
+       is_rowwise: function () 
+       pick_current: function (vars) 
+       remove: function (name) 
+       resolve: function (name) 
+       set_current_group: function (group) 
+       unused_vars: function () 
+     Private:
+       by_names: 
+       chops: environment
+       current_data: list
+       env_current_group_info: environment
+       env_mask_bindings: environment
+       grouped: FALSE
+       keys: tbl_df, tbl, data.frame
+       rows: vctrs_list_of, vctrs_vctr, list
+       rowwise: FALSE
+       size: 32
+       verb: summarise 
+   quo :  language ~n()
+── summarise_build ─────────────────────────────────────────────────────────────
+   by : List of 3
+    $ type : chr "ungrouped"
+    $ names: chr(0) 
+    $ data : tibble [1 × 1] (S3: tbl_df/tbl/data.frame)
+   cols : List of 3
+    $ new    :List of 2
+    $ sizes  : int 1
+    $ all_one: logi TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mean  n
+1 230.7219 32</code></pre>
+</div>
+</div>
+<p>Is it useful, I don’t know, but I like it, and I prefer typing <code>snitch::fun()</code> than remembering how to use <code>trace()</code>.</p>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R,snitch" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1707039107090" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="239">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-04-snitch/index.html" class="no-external"></a></p><a href="./posts/2024-02-04-snitch/index.html" class="no-external">
-<p><img src="./posts/2024-02-04-snitch/logo.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-02-04-snitch/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-04-snitch/index.html" class="no-external">snitch</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-04-snitch/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('snitch'); return false;">
-snitch
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-04-snitch/index.html" class="no-external">The experimental snitch 📦 spies on functions and packages</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-04-snitch/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-Romain François
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="R,ai,poetry,tada" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1707039107078" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="135">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external"></a></p><a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external">
-<p><img src="./posts/2024-02-02-tada-verse-poems/image.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external">tada::verse() poetry</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ai'); return false;">
-ai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('poetry'); return false;">
-poetry
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tada'); return false;">
-tada
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external">The tada::verse() function writes poetry️ 🦋 about your R package 📦. </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-02-tada-verse-poems/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-Romain François
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="wrapup" data-listing-date-sort="1706659200000" data-listing-file-modified-sort="1707039107066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="981">
-<div class="thumbnail">
-<p><a href="./posts/2024-01-31-january-2024/index.html" class="no-external"></a></p><a href="./posts/2024-01-31-january-2024/index.html" class="no-external">
-<p><img src="./posts/2024-01-31-january-2024/pelote.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-01-31-january-2024/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-01-31-january-2024/index.html" class="no-external">January 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-01-31-january-2024/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('wrapup'); return false;">
-wrapup
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-01-31-january-2024/index.html" class="no-external">📆 wrapping up january 2024 at tada<span style="color: orange">⬢</span>science, this was a busy month 🎉</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-01-31-january-2024/index.html" class="no-external">
-<div class="listing-date">
-Jan 31, 2024
-</div>
-<div class="listing-author">
-Romain François
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="tada,package,R" data-listing-date-sort="1706486400000" data-listing-file-modified-sort="1707039107062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="229">
-<div class="thumbnail">
-<p><a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external"></a></p><a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external">
-<p><img src="./posts/2024-01-29-welcome-to-the-tadaverse/mini.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external">Welcome to the tada<span style="color:pink;">⬢</span>verse</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('tada'); return false;">
-tada
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('package'); return false;">
-package
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external">The tada<span style="color:pink;">⬢</span>verse is a collection of 1 opinionated package for tada<span style="color:pink;">⬢</span>science. Developed by the tada<span style="color:pink;">⬢</span>science team of 😷 1, the tada<span style="color:pink;">⬢</span>verse is built to flip and spin data 📊 into tada 🎉.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-01-29-welcome-to-the-tadaverse/index.html" class="no-external">
-<div class="listing-date">
-Jan 29, 2024
-</div>
-<div class="listing-author">
-Romain François
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{françois2024,
+  author = {François, Romain},
+  title = {Snitch},
+  date = {2024-02-02},
+  url = {https://tada.science/posts/2024-02-04-snitch},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-françois2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+François, Romain. 2024. <span>“Snitch.”</span> February 2, 2024. <a href="https://tada.science/posts/2024-02-04-snitch">https://tada.science/posts/2024-02-04-snitch</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
