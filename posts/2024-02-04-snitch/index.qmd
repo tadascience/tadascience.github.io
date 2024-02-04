@@ -1,0 +1,43 @@
+---
+title: "snitch"
+description: "The experimental snitch 📦 spies on functions and packages"
+author:
+  - name: Romain François
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-02-02
+categories: [R, snitch]
+image: logo.png
+citation: 
+  url: https://tada.science/posts/2024-02-04-snitch
+draft: false
+---
+
+<a href="https://snitch.tada.science"><img src="logo.png" align="left" height="138"/></a>
+
+The snitch 📦 is one of those weekend experiments. In this particular case, it comes from *I don't know how to use base::trace() and I want a thing that tells me how a particular function is called,* so I want to spy on a function.
+
+The name and logo of the package might be because I've started to read the first Harry Potter book to my 6 years old daughter 🧙.
+
+DALL-E gave a decent logo once I removed explicit HP references 🤷‍♂️, i.e. *"a small gold colored spherical object with wings"* instead of *"the golden snitch":*
+
+> Can you make an hexagon logo for an R package called snitch, inspired by a small gold colored spherical object with wings. The package goal is to spy on function calls.
+
+Anyway 🤖, let's dive in, you can install it with `pak::pak("tadascience/snitch")` I'm not sure at this point this will make its way to CRAN.
+
+The package has `snitch::fun()` to spy on a function ... *(I don't know how to get the colors in quarto so let's go with a screenshot)*. You first get a [rule](https://cli.r-lib.org/reference/cli_rule.html) with breadcrumbs of functions that are spyed on, and then their arguments, courtesy of `ls.str()` :
+
+![](fun.png){fig-align="center"}
+
+... and `snitch::pkg()` to spy on functions from a package.
+
+```{r}
+suppressPackageStartupMessages(library(dplyr))
+snitch::pkg("dplyr", pattern = "^summarise_")
+
+mtcars %>%
+  summarise(mean = mean(disp), n = n())
+
+```
+
+Is it useful, I don't know, but I like it, and I prefer typing `snitch::fun()` than remembering how to use `trace()`.
