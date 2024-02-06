@@ -10,7 +10,7 @@ categories: [R, ai, poetry, tada]
 image: image.png
 citation: 
   url: https://tada.science/posts/2024-02-02-tada-verse-poetry
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: false
 ---
 
 I just received the *Thanks, on its way to CRAN* email 📧 about the [tada](tada.tada.science) package 🎉, so it's a good time for a celebration, and what better way to celebrate than with a dash of poetry.

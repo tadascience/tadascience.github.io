@@ -10,7 +10,7 @@ categories: [wrapup]
 image: pelote.png
 citation: 
   url: https://tada.science/posts/2024-01-31-january-2024
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: false
 ---
 
 It's already time to sunset 🌅 january, so let's obey the tradition of rounding up what happened on the previous month. Ok this is mostly a motivational tradition at this point, as it has happened exactly zero times in the past, but you gotta start somewhere right ?!
