@@ -1,6 +1,6 @@
 ---
 title: "📦 react"
-description: "react is a tiny package that intends to help with shiny recativity"
+description: "react is a tiny package that intends to help with shiny reactivity"
 author:
   - name: Romain François
     affiliation: tada⬢science
