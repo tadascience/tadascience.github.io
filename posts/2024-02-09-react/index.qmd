@@ -1,0 +1,64 @@
+---
+title: "📦 react"
+description: "react is a tiny package that intends to help with shiny recativity"
+author:
+  - name: Romain François
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-02-09
+categories: [package, react, shiny]
+image: react.png
+citation: 
+  url: https://tada.science/posts/2024-02-09-react
+draft: false
+---
+
+<a href="https://snitch.tada.science"><img src="react.png" align="left" height="138"/></a> I've had a few opportunities to do some shiny apps recently, and an old itch resurfaced, and so what I tend to do in those situations is make a package 📦, so let me introduce the [react](https://react.tada.science) package. it's on CRAN already, so you can get it the usual ways.
+
+Perhaps you are here because you believe this has something to do with [React](https://react.dev), and in that case I'm sorry to disappoint. However, please stay, I won't use much of your time 🐇.
+
+Take this code for a simple shiny server function:
+
+```{r}
+server <- function(input, output) {
+
+  dataInput <- reactive({
+    getSymbols(input$symb, src = "yahoo",
+               from = input$dates[1],
+               to = input$dates[2],
+               auto.assign = FALSE)
+  })
+
+  output$plot <- renderPlot({
+    chartSeries(dataInput(), theme = chartTheme("white"),
+                type = "line", log.scale = input$log, TA = NULL)
+  })
+
+}
+```
+
+It defines the `dataInput` reactive, and then uses it in the `renderPlot(expr=)` context by calling the function, i.e. `dataInput()` . The issue that I have with this is that one cannot distinguish easily between a call to a reactive expression, and a simple function call, e.g. a `geom_point()` call.
+
+The `react` package is there to help with this *insignificant* problem. Given the same reactive, with this 📦 you can instead invoke it with one of these forms: `react$dataInput` , `react[dataInput]` or `react[dataInput()]` so that the server code becomes for example:
+
+```{r}
+server <- function(input, output) {
+
+  dataInput <- reactive({
+    getSymbols(input$symb, src = "yahoo",
+               from = input$dates[1],
+               to = input$dates[2],
+               auto.assign = FALSE)
+  })
+
+  output$plot <- renderPlot({
+    chartSeries(react$dataInput, theme = chartTheme("white"),
+                type = "line", log.scale = input$log, TA = NULL)
+  })
+
+}
+```
+
+What I like about this is that it makes inputs and reactive look more alike, and also makes it easier to search for reactive calls in your ide, etc ...
+
+The dev version also make `react` an identity function, so that you can have a 4th alternative: `react(dataInput())` and here the idea is that you'd also wrap inputs, e.g. `react(input$symb)` for improved discoverability. This will, unless I realize it's dumb 😵‍💫 be released in the spring 🌱 version of `react`
