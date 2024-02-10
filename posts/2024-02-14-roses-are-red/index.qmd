@@ -1,0 +1,28 @@
+---
+title: "🌹 Spread the 💜 for R 📦 with valentine::roses()"
+description: "valentine is a small R packages that uses ChatGPT via the openai package to generate roses are red ... poetry about R packages. "
+author:
+  - name: Romain François
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-02-14
+categories: [package, valentine, poetry, ai, love]
+image: logo.png
+citation: 
+  url: https://tada.science/posts/2024-02-14-roses-are-red
+draft: false
+---
+
+<a href="https://valentine.tada.science"><img src="logo.png" align="left" height="138"/></a> To get ready, *at least in the R world* 😝, for Valentine's day, I've cooked a little R 📦 to spread the love by generating *Roses are Red, ...* poems about packages using ChatGPT though the [openai](https://irudnyts.github.io/openai/) package.
+
+You can install it with `pak::pak("tadascience/valentine")` and perhaps it will be released in time for Valentine's day.
+
+```{r}
+valentine::roses("tidyverse")
+```
+
+You can tweak the prompt that is sent with the `hint=` argument.
+
+```{r}
+valentine::roses("lubridate", hint = "make it kinky")
+```
