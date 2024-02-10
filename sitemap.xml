@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tada.science/posts.html</loc>
-    <lastmod>2024-02-09T16:47:08.728Z</lastmod>
+    <lastmod>2024-02-10T17:34:32.657Z</lastmod>
   </url>
   <url>
-    <loc>https://tada.science/posts/2024-02-04-snitch/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.752Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tada.science/about.html</loc>
-    <lastmod>2024-02-09T16:47:08.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tada.science/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tada.science/posts/2024-02-02-tada-verse-poems/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.744Z</lastmod>
+    <loc>https://tada.science/posts/2024-02-14-roses-are-red/index.html</loc>
+    <lastmod>2024-02-10T17:34:32.689Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-09-react/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.756Z</lastmod>
+    <lastmod>2024-02-10T17:34:32.689Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/posts/2024-02-02-tada-verse-poems/index.html</loc>
+    <lastmod>2024-02-10T17:34:32.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/index.html</loc>
+    <lastmod>2024-02-10T17:34:32.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/about.html</loc>
+    <lastmod>2024-02-10T17:34:32.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse/index.html</loc>
+    <lastmod>2024-02-10T17:34:32.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/posts/2024-02-04-snitch/index.html</loc>
+    <lastmod>2024-02-10T17:34:32.685Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-01-31-january-2024/index.html</loc>
-    <lastmod>2024-02-09T16:47:08.728Z</lastmod>
+    <lastmod>2024-02-10T17:34:32.661Z</lastmod>
   </url>
 </urlset>
