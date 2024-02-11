@@ -204,17 +204,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><a href="https://valentine.tada.science"><img src="logo.png" align="left" height="138"></a> To get ready, <em>at least in the R world</em> 😝, for Valentine’s day, I’ve cooked a little R 📦 to spread the love by generating <em>Roses are Red, …</em> poems about packages using ChatGPT though the <a href="https://irudnyts.github.io/openai/">openai</a> package.</p>
-<p>You can install it with <code>pak::pak("tadascience/valentine")</code> and perhaps it will be released in time for Valentine’s day.</p>
+<p>You can install it with <code>pak::pak("tadascience/valentine")</code> and perhaps it will be released to CRAN in time for Valentine’s day, it’s in the pipeline.</p>
+<p>If you are not already set with an <code>OPENAI_API_KEY</code>, see you later in this article, otherwise let’s make some 🤖 poetry 🪶 📝</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valentine<span class="sc">::</span><span class="fu">roses</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>🌹 Roses are red, 📊
-
-✨ Tidyverse is my fave, 🌈
-
-🔧 With dplyr and ggplot2, 💻
-
-📦 Data wrangling made easy, hooray! 🎉</code></pre>
+<pre><code>🌹 Roses are red, 📦
+✨ tidyverse is my love, 💕
+💡 It makes coding fun, 🤩
+🌈 With tidy data, I rise above! 📊</code></pre>
 </div>
 </div>
 <p>You can tweak the prompt that is sent with the <code>hint=</code> argument.</p>
@@ -222,9 +220,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>valentine<span class="sc">::</span><span class="fu">roses</span>(<span class="st">"lubridate"</span>, <span class="at">hint =</span> <span class="st">"make it kinky"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Roses are red 🌹
-Lubridate helps the time thread ⏰
-Handle dates with seductive grace 😏
-Emojis making data kinky fun-filled chase 😉</code></pre>
+Lubridate keeps time in your bed 🕒💤
+Date parsing and manipulation so fine 😍💃
+It's the R package that sparks a kinky line! 🔥😉</code></pre>
+</div>
+</div>
+<p>Before you can use <code>valentine::roses()</code> you need to be setup with an API key you can get from <a href="https://platform.openai.com/account/api-keys">OpenAI</a>. Once you’re there, click the “Create new secret key”, name it whatever you like:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="openai-key.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384"></p>
+</figure>
+</div>
+<p>And then copy the secret key.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="openai-key-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384"></p>
+</figure>
+</div>
+<p>… and store it in your <code>.Renviron</code> file, e.g.&nbsp;by using <code>usethis::edit_r_environ()</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="renviron.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384"></p>
+</figure>
+</div>
+<p>Restart R, and 🦆</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>valentine<span class="sc">::</span><span class="fu">roses</span>(<span class="st">"data.table"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Roses are 🔴, 
+Data.table is 💪,
+Efficient and 🚀,
+It's a 🎁 to me!</code></pre>
 </div>
 </div>
 
