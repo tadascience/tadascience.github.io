@@ -15,7 +15,9 @@ draft: false
 
 <a href="https://valentine.tada.science"><img src="logo.png" align="left" height="138"/></a> To get ready, *at least in the R world* 😝, for Valentine's day, I've cooked a little R 📦 to spread the love by generating *Roses are Red, ...* poems about packages using ChatGPT though the [openai](https://irudnyts.github.io/openai/) package.
 
-You can install it with `pak::pak("tadascience/valentine")` and perhaps it will be released in time for Valentine's day.
+You can install it with `pak::pak("tadascience/valentine")` and perhaps it will be released to CRAN in time for Valentine's day, it's in the pipeline.
+
+If you are not already set with an `OPENAI_API_KEY`, see you later in this article, otherwise let's make some 🤖 poetry 🪶 📝
 
 ```{r}
 valentine::roses("tidyverse")
@@ -25,4 +27,22 @@ You can tweak the prompt that is sent with the `hint=` argument.
 
 ```{r}
 valentine::roses("lubridate", hint = "make it kinky")
+```
+
+Before you can use `valentine::roses()` you need to be setup with an API key you can get from [OpenAI](https://platform.openai.com/account/api-keys). Once you're there, click the "Create new secret key", name it whatever you like:
+
+![](openai-key.png){fig-align="center" width="384"}
+
+And then copy the secret key.
+
+![](openai-key-2.png){fig-align="center" width="384"}
+
+... and store it in your `.Renviron` file, e.g. by using `usethis::edit_r_environ()`
+
+![](renviron.png){fig-align="center" width="384"}
+
+Restart R, and 🦆
+
+```{r}
+valentine::roses("data.table")
 ```
