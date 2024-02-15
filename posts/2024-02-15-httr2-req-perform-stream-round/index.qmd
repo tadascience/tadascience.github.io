@@ -1,0 +1,152 @@
+---
+title: "🧢 httr2::req_perform_stream(round = ) ⚾️"
+author:
+  - name: Romain François
+    affiliation: tada⬢science
+    affiliation-url: https://tada.science
+date: 2024-02-15
+categories: [package, httr2, R, emoji]
+image: https://httr2.r-lib.org/logo.png
+citation: 
+  url: https://tada.science/posts/2024-02-14-roses-are-red
+draft: false
+---
+
+<a href="https://httr2.r-lib.org"><img src="https://httr2.r-lib.org/logo.png" align="left" height="138" style="margin: 10px"/></a> httr2 is an amazing 📦 from the `r-lib` team. Built on top of the strong foundations of `curl`, experience from the previous incarnation with `httr` and tidy principles and design, `httr2` is an easy goto for anything api related.
+
+But ... I found a bug 🪲, or let's call it a missed opportunity 🤓. TL;DR [it was fixed](https://github.com/r-lib/httr2/pull/437). Let's rewind.
+
+## In da beginning, there was emoji
+
+🎉 aka `:tada:` is the best emoji, this is not open for debate 😂.
+
+```{r}
+(tada <- emo::ji("tada"))
+```
+
+Let's dissect it with the help of 📦 [`utf8splain`](https://github.com/ThinkR-open/utf8splain) and [`uni`](https://github.com/ThinkR-open/uni) I totally forgot about. `tada` is a single code point emoji `U+1F389` aka `"\U1F389"` in R:
+
+```{r}
+cat("\U1F389")
+dplyr::filter(uni::code, rune == "U+1F389")
+```
+
+In utf-8, i.e. the encoding to rule them all, 🎉 is encoded with 4 bytes that follow the convention explained in [the UTF-8 wikipedia page](https://en.wikipedia.org/wiki/UTF-8#Encoding). `11110000` : starts with `11110` to indicate it is a 4 bytes encoded code point (or rune 🀄️), followed by 3 continuation bytes that start with `10` : `10011111, 10001110, 10001001`.
+
+(*I still don't know how to reveal the ansi escape codes in quarto, so using a screenshot instead so that you have colors 🌈).*
+
+![](tada.png){fig-align="left"}
+
+Just like 🎉, many characters are encoded using more than on byte in utf-8 and other encodings.
+
+## golem poem
+
+While we're in [ThinkR](https://thinkr.fr) realm (`uni` and `utf8splain`) are weekend 📦 we developed when I was working with them 💜, let's look at what started this side quest of fixing a 🐞 in `httr2`. In the [tada::verse()](https://tada.science/posts/2024-02-02-tada-verse-poems/) post I introduced a function to compose 📦 poems with ChatGPT via the [mlverse/chattr](https://github.com/mlverse/chattr) package, and was annoyed that the function would not work to write a [`golem`](https://thinkr-open.github.io/golem/) poem.
+
+```         
+> chattr::chattr("Can you write a poem about the R package called 'golem'. Please add a bunch of emojis.")
+Sure! Here's a poem about the R package 'golem' with a bunch of emojis:
+
+Error in `discard()`:
+ℹ In index: 1.
+Caused by error:
+! `.p()` must return a single `TRUE` or `FALSE`, not `NA`.
+Run `rlang::last_trace()` to see where the error occurred.
+Warning messages:
+1: In strsplit(., "data: ") :
+  unable to translate 'data: {"id":"chatcmpl-8nsIIxlfPHfY8BhhuUu7NFsIO57AC","object":"chat.completion.chunk","created":1706897470,"model":"gpt-3.5-turbo-0613","system_fingerprint":null,"choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_re...' to a wide string
+2: In strsplit(., "data: ") : input string 1 is invalid
+```
+
+That was embarrassing and curbed my enthusiasm about sharing the poem with the team. I still did, but I had to use the normal ChatGPT app like a human instead of the api 😥.
+
+## Fixing mlverse/chattr
+
+[mlerse/chattr](https://github.com/mlverse/chattr) is not the only R 📦 that can speak to `ChatGPT` and I successfully used [irudnyts/openai](https://irudnyts.github.io/openai/) for another similar quest with the `valentine` package that writes [roses are red ...](https://tada.science/posts/2024-02-14-roses-are-red/) poems about packages. This does work, e.g.
+
+```{r}
+valentine::roses("golem")
+```
+
+The advantage of `mlverse/chattr` though is that is uses streaming to get tokens faster rather than wait for the whole poem to be composed.
+
+So naturally, I went for a dive on how `mlverse/chattr` works, using [snitch](https://tada.science/posts/2024-02-04-snitch/) to get some understanding of its implementation, and sending [a bottle in the issues](https://github.com/mlverse/chattr/issues/63) in case the `chattr` team wanted to spare my quest.
+
+I sent a first clunky [pull request](https://github.com/mlverse/chattr/pull/64) that did the job, while looking kind of ugly and hacky. When that happens, that's usually a good sign that this is a solution to the wrong problem, so I abandonned that PR and decided to go earlier in the 📦 chain and look at [r-lib/httr2](https://httr2.r-lib.org) because `chattr` uses `httr2::req_perform_stream()` to ... process the stream.
+
+The stream from ChatGPT is processed by fixed-size chunks of bytes, and so the problem was that on occasions, these chunks cut an emoji in the middle, which causes issues down the line:
+
+```{r}
+tad <- charToRaw(tada)[1:3]
+tad
+rawToChar(tad)
+nchar(tad)
+```
+
+This confused other parts of the `mlverse/chattr` codebase.
+
+## Fixing r-lib/httr2
+
+Now that this was reframed as a missed `r-lib/httr2` opportunity, and I had been looking for an excuse to peep on how `httr2` works, I deep dived and opened a [pull request](https://github.com/r-lib/httr2/pull/437) last week. Hadley started to review it the next day and we 🏓 on it and iterated a few times until we were happy about it.
+
+![](pr.png){fig-align="center"}
+
+It is now merged, and so will be released as part of the next `httr2` release, but you can take it for a spin with `pak::pak("r-lib/httr2")`.
+
+My initial proposal was to add a `req_perform_stream_lines()`, based on the idea that if we know the stream is text encoded in utf-8, instead of streaming all the bytes, and taking the risk that chunks might cut emojis or other character mid rune, we can buffer the bytes and process line by line.
+
+This kind of worked, but we ended up having the two sister functions `req_perform_stream()` and `req_perform_stream_lines()` that shared a lot of logic but were different. Something was off.
+
+We continued to iterate, and Hadley has been as usual generous with reviewing and improving the pull request. Hadley even contributed the tests that allowed us to 🏃‍♂️ the last kilometer 💚.
+
+We settled on adding the extra argument `round=` to the `req_perform_stream()` function, so that instead of processing fixed-size chunks of bytes, the callback function could receive a truncated sequence of bytes.
+
+Here is the updated documentation for `req_perform_stream()` :
+
+![](round.png)
+
+The default behavior remains `round = "byte"` so that the risk of the pull request being dispruptive is minimal, so by default the full chunk of `buffer_kb` kilobytes is sent to the `callback`.
+
+The added value of the pull request though is that you can now `round = "line"` so that the stream is buffered and cut at the last newline character, a new line is a character that is encoded in a single byte, i.e. its utf-8 representation is the same as its ascii `00001010` .
+
+```{r}
+utf8splain::runes("\n")
+utf8splain::bytes("\n")
+```
+
+We also contemplated on implementing `round = "utf8"` to round at the last valid utf-8 sequence, but we eventually arbitrated that it's probably not worth it at this stage.
+
+But `round =` is flexible enough to accomodate for other ways of rounding, and is passed through the internal `httr2::as_round_function()` :
+
+```{r}
+as_round_function <- function(round = c("byte", "line"),
+                              error_call = caller_env()) {
+  if (is.function(round)) {
+    check_function2(round, args = "bytes")
+    round
+  } else if (is.character(round)) {
+    round <- arg_match(round, error_call = error_call)
+    switch(round,
+      byte = function(bytes) length(bytes),
+      line = function(bytes) which(bytes == charToRaw("\n"))
+    )
+  } else {
+    cli::cli_abort(
+      '{.arg round} must be "byte", "line" or a function.',
+      call = error_call
+    )
+  }
+}
+```
+
+I'll talk about `cli_abort()`, `arg_match()` and `error_call` some other day. Working on this pull request was great and I believe we end up with the right solution.
+
+## Fixing mlverse/chattr, take 2
+
+With `req_perform_stream(round = "line")` it becomes much easier to fix the initial problem, so I could send a second [pull request](https://github.com/mlverse/chattr/pull/65) there, and now with the dev version of `httr2` and the pull request of `chattr` we can finally enjoy the `golem` poem:
+
+```{r}
+# pak::pak("mlverse/chattr#65")
+chattr::chattr_use("gpt35")
+tada::verse("golem")
+```
