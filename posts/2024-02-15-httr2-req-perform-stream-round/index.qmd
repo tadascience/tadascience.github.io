@@ -8,7 +8,7 @@ date: 2024-02-15
 categories: [package, httr2, R, emoji]
 image: https://httr2.r-lib.org/logo.png
 citation: 
-  url: https://tada.science/posts/2024-02-14-roses-are-red
+  url: https://tada.science/posts/2024-02-15-httr2-req-perform-stream-round
 draft: false
 ---
 
