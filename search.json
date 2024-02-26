@@ -77,11 +77,18 @@
     "text": "Reading\nI’m committed to step up my reading habits, because there are a lot more things I want to apply my curiosity too. Last month I read Learning To Scale with my reading partner. Thanks again Diane 👸 for the recommendation, and the book. Learning to Lead, Leading to Learn is next on my list on the same theme.\n\n\n\n\n\nAlso finished Unbroken: the Trauma response is never wrong on a totally different topic. The trauma tapes is one of my favourite podcasts and the book goes further.\nWhat Now, with Trevor Noah is an another one of my favourite podcasts, and the episode featuring Kerry Washington is what converted me to sign up to Audible. This is a fascinating story. Next on my Audible queue is Viola Davis’s Finding Me.\nOn the more technical front, I’ll go through C++20: the complete guide because there seems to be a lot of interesting new things happening in C++ 🤓🚀."
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
+    "objectID": "posts/2024-02-26-link/index.html",
+    "href": "posts/2024-02-26-link/index.html",
+    "title": "🔗 link",
     "section": "",
-    "text": "🥩 raw strings 🧶\n\n\n\n\n\n\nR\n\n\nstring\n\n\nfacepalm\n\n\n\n\n\n\n\n\n\nFeb 17, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n🧢 httr2::req_perform_stream(round = ) ⚾️\n\n\n\n\n\n\npackage\n\n\nhttr2\n\n\nR\n\n\nemoji\n\n\n\n\n\n\n\n\n\nFeb 15, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n🌹 Spread the 💜 for R 📦 with valentine::roses()\n\n\n\n\n\n\npackage\n\n\nvalentine\n\n\npoetry\n\n\nai\n\n\nlove\n\n\n\nvalentine is a small R packages that uses ChatGPT via the openai package to generate roses are red … poetry about R packages. \n\n\n\n\n\nFeb 14, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n📦 react\n\n\n\n\n\n\npackage\n\n\nreact\n\n\nshiny\n\n\n\nreact is a tiny package that intends to help with shiny reactivity\n\n\n\n\n\nFeb 9, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nsnitch\n\n\n\n\n\n\nR\n\n\nsnitch\n\n\n\nThe experimental snitch 📦 spies on functions and packages. The name and logo are inspired from the Harry Potter world. \n\n\n\n\n\nFeb 4, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\ntada::verse() poetry\n\n\n\n\n\n\nR\n\n\nai\n\n\npoetry\n\n\ntada\n\n\n\nThe tada::verse() function writes poetry️ 🦋 about your R package 📦. \n\n\n\n\n\nFeb 2, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 2024\n\n\n\n\n\n\nwrapup\n\n\n\n📆 wrapping up january 2024 at tada⬢science, this was a busy month 🎉\n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
+    "text": "link  is a simple goofy R 📦 that makes it simple to include links to packages, e.g.   tidyverse ,   dplyr  and function calls   summarise()    ggplot()  in your .Rmd or .qmd files.\nThis works by setting the   knitr  text hook with   auto()  somewhere in your document. You can learn more about   knitr  hooks in the Writing knitr hooks article from Danielle Navarro’s Notes from a data witch blog.\n```{r}\n#| echo: false\nlink::auto(keep_braces = FALSE, keep_pkg_prefix = FALSE)\n```\nThe defaults `keep_braces = TRUE` and `keep_pkg_prefix` keeps the braces around the 📦 names and the package prefix in the calls. This is popular style but I don’t like it and find it too noisy.\n  link  is heavily based on   downlit  and especially   href_package()  and   autolink()  which do the actual work. We just go the extra mile and make this automatic by means of a   knitr  hook.\nThis very article uses   auto() , i.e. here is how it looks in rstudio:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "tada<span style='color:pink; font-size: 120%'>⬢</span>science",
+    "section": "",
+    "text": "🎉"
   },
   {
     "objectID": "about.html",
@@ -91,11 +98,11 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "tada<span style='color:pink; font-size: 120%'>⬢</span>science",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "🎉"
+    "text": "🔗 link\n\n\n\n\n\n\nR\n\n\npackage\n\n\nlink\n\n\n\nlink is a simple R 📦 that makes it easier to include links to packages pkgdown pages\n\n\n\n\n\nFeb 17, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n🥩 raw strings 🧶\n\n\n\n\n\n\nR\n\n\nstring\n\n\nfacepalm\n\n\n\n\n\n\n\n\n\nFeb 17, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n🧢 httr2::req_perform_stream(round = ) ⚾️\n\n\n\n\n\n\npackage\n\n\nhttr2\n\n\nR\n\n\nemoji\n\n\n\n\n\n\n\n\n\nFeb 15, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n🌹 Spread the 💜 for R 📦 with valentine::roses()\n\n\n\n\n\n\npackage\n\n\nvalentine\n\n\npoetry\n\n\nai\n\n\nlove\n\n\n\nvalentine is a small R packages that uses ChatGPT via the openai package to generate roses are red … poetry about R packages. \n\n\n\n\n\nFeb 14, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\n📦 react\n\n\n\n\n\n\npackage\n\n\nreact\n\n\nshiny\n\n\n\nreact is a tiny package that intends to help with shiny reactivity\n\n\n\n\n\nFeb 9, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nsnitch\n\n\n\n\n\n\nR\n\n\nsnitch\n\n\n\nThe experimental snitch 📦 spies on functions and packages. The name and logo are inspired from the Harry Potter world. \n\n\n\n\n\nFeb 4, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\ntada::verse() poetry\n\n\n\n\n\n\nR\n\n\nai\n\n\npoetry\n\n\ntada\n\n\n\nThe tada::verse() function writes poetry️ 🦋 about your R package 📦. \n\n\n\n\n\nFeb 2, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 2024\n\n\n\n\n\n\nwrapup\n\n\n\n📆 wrapping up january 2024 at tada⬢science, this was a busy month 🎉\n\n\n\n\n\nJan 31, 2024\n\n\nRomain François\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to the tada⬢verse\n\n\n\n\n\n\ntada\n\n\npackage\n\n\nR\n\n\n\nThe tada⬢verse is a collection of 1 opinionated package for tada⬢science. Developed by the tada⬢science team of 😷 1, the tada⬢verse is built to flip and spin data 📊 into tada 🎉.\n\n\n\n\n\nJan 29, 2024\n\n\nRomain François\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2024-02-04-snitch/index.html",

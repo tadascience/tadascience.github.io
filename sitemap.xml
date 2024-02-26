@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tada.science/posts/2024-02-09-react/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.135Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.911Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-02-tada-verse-poems/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.123Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.899Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-01-29-welcome-to-the-tadaverse/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.103Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.879Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-01-31-january-2024/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.107Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.883Z</lastmod>
   </url>
   <url>
-    <loc>https://tada.science/posts.html</loc>
-    <lastmod>2024-02-17T17:02:19.103Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tada.science/about.html</loc>
-    <lastmod>2024-02-17T17:02:19.103Z</lastmod>
+    <loc>https://tada.science/posts/2024-02-26-link/index.html</loc>
+    <lastmod>2024-02-26T15:56:28.919Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.103Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/about.html</loc>
+    <lastmod>2024-02-26T15:56:28.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tada.science/posts.html</loc>
+    <lastmod>2024-02-26T15:56:28.879Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-04-snitch/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.135Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.911Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-14-roses-are-red/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.139Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.911Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-15-httr2-req-perform-stream-round/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.139Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.915Z</lastmod>
   </url>
   <url>
     <loc>https://tada.science/posts/2024-02-17-raw-strings/index.html</loc>
-    <lastmod>2024-02-17T17:02:19.143Z</lastmod>
+    <lastmod>2024-02-26T15:56:28.915Z</lastmod>
   </url>
 </urlset>
