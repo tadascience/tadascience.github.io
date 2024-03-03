@@ -5,7 +5,7 @@ author:
   - name: Romain François
     affiliation: tada⬢science
     affiliation-url: https://tada.science
-date: 2024-02-17
+date: 2024-02-26
 categories: [R, package, link]
 image: logo.png
 citation: 
